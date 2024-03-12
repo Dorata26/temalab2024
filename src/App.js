@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const api = {
   key: '0cbcb3d7f93603d3da17737e0d766767',
@@ -8,12 +8,24 @@ const api = {
 function App() {
   const [search, setSearch] = useState('');
   const [result, setResult] = useState(null);
+  const [animation, setAnimation] = useState('');
+  useEffect(() => {
+    if(result){
+      setTimeout(() => {
+        
+      document.querySelector('.bottom').classList.add('visible');},100);}
+    }, 
+    [result])
+    
+
 
   const searchPressed = () => {
-    //hibaüzenet ha nincs beírva semmi
+    
     if(search.trim() === ''){
       alert('Please enter a location');
     return;}
+    setResult(null);
+    setAnimation(new Date().getTime().toString());
    
     fetch(`${api.base}weather?q=${search}&APPID=${api.key}&units=metric`)
       .then(res => res.json())
@@ -25,6 +37,7 @@ function App() {
         }
         setResult(data);
         setSearch('');
+        setAnimation(new Date().getTime().toString());
         
       })
       .catch(error => console.error('Error fetching data:', error));
@@ -64,7 +77,7 @@ function App() {
               </div>
             </div>
           )}
-
+        </div>
           {result && (
             <div className='bottom'>
               <div className='bottomBox'>
@@ -91,7 +104,7 @@ function App() {
               </div>
             </div>
           )}
-        </div>
+        
       </div>
       
     </div>

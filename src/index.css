@@ -44,6 +44,8 @@ h1{
   backdrop-filter: blur(5px);
   padding: 20px;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -63,7 +65,7 @@ h1{
   position: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
-  width: 768px;
+  width: 80%;
   backdrop-filter: blur(3px);
   padding: 20px;
   border-radius: 20px;
@@ -136,29 +138,39 @@ p{
   padding-left: 10px;
   line-height: 1.2;
 }
-.bottom{
+
+
+.bottom {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   margin: 10px 0;
 }
-.bottomBox{
+
+.bottomBox {
   position: relative;
   background-color: rgba(202, 183, 147, 0.2);
   border-radius: 10px;
   margin: 10px;
   width: 200px;
-
   display: flex;
   flex-direction: column; 
   height: 100px;
   align-items: center;
-  transition: all 0.5s ease;
+  opacity: 0;
+  justify-content: center;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.bottom .bottomBox .header {
-  padding: 10px;
-}
+
+.bottom.visible .bottomBox {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s, transform 0.5s ease; 
+  }
+
+
 @media (max-width: 768px){
   body{
     display: block;
