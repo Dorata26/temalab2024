@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/weather_app/static/css/main.bec404fe.css",
+    "main.js": "/weather_app/static/js/main.22f36759.js",
+    "static/js/453.0ccb7fb4.chunk.js": "/weather_app/static/js/453.0ccb7fb4.chunk.js",
+    "static/media/tom-barrett-hgGplX3PFBg-unsplash.jpg": "/weather_app/static/media/tom-barrett-hgGplX3PFBg-unsplash.c1eeb4d5e0b7ddec4573.jpg",
+    "index.html": "/weather_app/index.html",
+    "main.bec404fe.css.map": "/weather_app/static/css/main.bec404fe.css.map",
+    "main.22f36759.js.map": "/weather_app/static/js/main.22f36759.js.map",
+    "453.0ccb7fb4.chunk.js.map": "/weather_app/static/js/453.0ccb7fb4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bec404fe.css",
+    "static/js/main.22f36759.js"
+  ]
+}
