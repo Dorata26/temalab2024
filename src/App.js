@@ -6,6 +6,8 @@ const api = {
 };
 
 function App() {
+  
+
   const [search, setSearch] = useState('');
   const [result, setResult] = useState(null);
   const [animation, setAnimation] = useState('');
@@ -60,23 +62,24 @@ function App() {
               <button onClick={searchPressed}>Search</button>
             </div>
           </div>
-
-          {result && (
-            <div>
-              <div className='location'>
-                <h1>{result.name}</h1>
+          <div className='data'>
+            {result && (
+              <div>
+                <div className='location'>
+                  <h1>{result.name}</h1>
+                </div>
+                <div className='conutry'>
+                  <h2>{result.sys.country}</h2>
+                </div>
+                <div className='temp'>
+                  <h1>{(result.main.temp).toFixed(0)} C°</h1>
+                </div>
+                <div className='description'>
+                  <h3>{result.weather[0].description}</h3>
+                </div>
               </div>
-              <div className='conutry'>
-                <h2>{result.sys.country}</h2>
-              </div>
-              <div className='temp'>
-                <h1>{(result.main.temp).toFixed(0)} C°</h1>
-              </div>
-              <div className='description'>
-                <h3>{result.weather[0].description}</h3>
-              </div>
-            </div>
-          )}
+            )}
+          </div>  
         </div>
           {result && (
             <div className='bottom'>
