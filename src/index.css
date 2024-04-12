@@ -108,8 +108,10 @@ button{
   font-size: 1rem;
 }
 h1{
-  font-size: 3.6rem;
-  white-space: normal;
+  font-size: 7vw;
+  white-space: nowrap;
+  
+  text-overflow: ellipsis;
   margin: 0;
   max-width: 80%;
   padding-left: 3px;
