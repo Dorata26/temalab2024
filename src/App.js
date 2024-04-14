@@ -11,7 +11,8 @@ function App() {
 
   const [search, setSearch] = useState('');
   const [result, setResult] = useState(null);
-  const [animation, setAnimation] = useState('');
+  
+
   useEffect(() => {
     if(result){
       setTimeout(() => {
@@ -28,8 +29,14 @@ function App() {
       alert('Please enter a location');
     return;}
     setResult(null);
-    setAnimation(new Date().getTime().toString());
-   
+    
+
+    if(!isNaN(search)){
+      alert('Please enter a valid location');
+    return;}
+    setResult(null);
+  
+
     fetch(`${api.base}weather?q=${search}&APPID=${api.key}&units=metric`)
       .then(res => res.json())
       .then(data => {console.log(data);
@@ -38,9 +45,11 @@ function App() {
           alert('Location not found');
           return;
         }
+        
         setResult(data);
         setSearch('');
-        setAnimation(new Date().getTime().toString());
+        document.querySelector('.bottom').classList.remove('visible');
+      
         
       })
       .catch(error => console.error('Error fetching data:', error));
