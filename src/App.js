@@ -24,13 +24,13 @@ function App() {
 
 
   const searchPressed = () => {
-    
+    //hibaüzenet ha nem írunk be semmit
     if(search.trim() === ''){
       alert('Please enter a location');
     return;}
     setResult(null);
     
-
+    //hibaüzenet ha számra keresünk
     if(!isNaN(search)){
       alert('Please enter a valid location');
     return;}
@@ -49,7 +49,6 @@ function App() {
         setResult(data);
         setSearch('');
         document.querySelector('.bottom').classList.remove('visible');
-      
         
       })
       .catch(error => console.error('Error fetching data:', error));
