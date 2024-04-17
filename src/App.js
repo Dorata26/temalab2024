@@ -45,15 +45,25 @@ function App() {
           alert('Location not found');
           return;
         }
-        
-        setResult(data);
-        setSearch('');
-        document.querySelector('.bottom').classList.remove('visible');
+        if(navigator.onLine){
+          setResult(data);
+          setSearch('');
+          localStorage.clear();
+          localStorage.setItem(data.name, JSON.stringify(data));
+          document.querySelector('.bottom').classList.remove('visible');
+        }
+      
+
+        else if (!navigator.onLine) {
+          console.log("offline");
+          setResult(localStorage.getItem(result.name, JSON.stringify(data)));
+        }
         
       })
       .catch(error => console.error('Error fetching data:', error));
   };
 
+  
   return (
     <div className='app'>
       <div className='container'>
