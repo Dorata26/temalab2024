@@ -11,7 +11,9 @@ function App() {
 
   const [search, setSearch] = useState('');
   const [result, setResult] = useState(null);
-  
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString();
+  const currentTime = currentDate.toLocaleTimeString();
 
   useEffect(() => {
     if(result){
@@ -45,23 +47,40 @@ function App() {
           alert('Location not found');
           return;
         }
-        if(navigator.onLine){
-          setResult(data);
-          setSearch('');
-          localStorage.clear();
-          localStorage.setItem(data.name, JSON.stringify(data));
-          document.querySelector('.bottom').classList.remove('visible');
-        }
-      
-
-        else if (!navigator.onLine) {
-          console.log("offline");
-          setResult(localStorage.getItem(result.name, JSON.stringify(data)));
-        }
+        
+        setResult(data);
+        setSearch('');
+        localStorage.clear();
+        localStorage.setItem(data.name, JSON.stringify(data));
+        
+        document.querySelector('.bottom').classList.remove('visible');
         
       })
-      .catch(error => console.error('Error fetching data:', error));
-  };
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        if (!navigator.onLine) {
+            console.log("offline");
+            const keys = Object.keys(localStorage);
+            if (keys.length > 0) {
+                const lastKey = keys[keys.length - 1];
+                const storedData = JSON.parse(localStorage.getItem(lastKey));
+                if (storedData) {
+                    setResult(storedData);
+                    setSearch('');
+                    alert(`You are offline, showing last searched location at ${formattedDate} ${currentTime}`);
+                    const bottomElement = document.querySelector('.bottom');
+                    if (bottomElement) {
+                        bottomElement.classList.remove('visible');
+                    }
+                }
+            }
+        }
+    });
+    
+    
+
+
+    }; 
 
   
   return (
