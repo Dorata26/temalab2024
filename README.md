@@ -1,9 +1,10 @@
 
-# Github Pages: https://Dorata26.github.io/temalab2024
+# Github Pages: 
+_https://Dorata26.github.io/temalab2024_
 
 # Dokumentáció
 A témalaboratórium során készítettem egy időjárás jelentő progresszív webalkalmazást (PWA).
-A PWA az Accuweather ( https://www.accuweather.com ) ingyenes API-ját használja. Az webalkalmazás attól progresszív, hogy lehet telepíteni és offline is elérhető. Amikor online keresünk, mindig elmenti az utoljára keresett adatokat a _localstorage_-ba, ahonnan visszanyerhetőek lesznek, így amikor offline nyitjuk meg az oldalt, megjeleníti a legutóbbi online keresést és annak az időpontját. Ha a felhasználó online keres, akkor is vannak ellenőrzések: nem lehet nem létező helyre keresni, nem lehet null karakterre keresni, nem lehet nem betűre keresni. 
+A PWA az Accuweather (https://www.accuweather.com) ingyenes API-ját használja. Az webalkalmazás attól progresszív, hogy lehet telepíteni és offline is elérhető. Amikor online keresünk, mindig elmenti az utoljára keresett adatokat a _localstorage_-ba, ahonnan visszanyerhetőek lesznek, így amikor offline nyitjuk meg az oldalt, megjeleníti a legutóbbi online keresést és annak az időpontját. Ha a felhasználó online keres, akkor is vannak ellenőrzések: nem lehet nem létező helyre keresni, nem lehet null karakterre keresni, nem lehet nem betűre keresni. 
 A telepíthetőséget ServiceWorker-ek oldják meg. _install_ _fetch_ és egy _actiavte_ _EventListener_ teszik lehetővé. 
 A frontend-hez az _index.css_-t írtam meg.
 __React__
