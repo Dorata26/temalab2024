@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/temalab2024/static/css/main.a9931b49.css",
-    "main.js": "/temalab2024/static/js/main.7bdd40cc.js",
+    "main.css": "/temalab2024/static/css/main.38d79667.css",
+    "main.js": "/temalab2024/static/js/main.16ab2788.js",
     "static/js/453.0ccb7fb4.chunk.js": "/temalab2024/static/js/453.0ccb7fb4.chunk.js",
     "static/media/tom-barrett-hgGplX3PFBg-unsplash.jpg": "/temalab2024/static/media/tom-barrett-hgGplX3PFBg-unsplash.c1eeb4d5e0b7ddec4573.jpg",
     "index.html": "/temalab2024/index.html",
-    "main.a9931b49.css.map": "/temalab2024/static/css/main.a9931b49.css.map",
-    "main.7bdd40cc.js.map": "/temalab2024/static/js/main.7bdd40cc.js.map",
+    "main.38d79667.css.map": "/temalab2024/static/css/main.38d79667.css.map",
+    "main.16ab2788.js.map": "/temalab2024/static/js/main.16ab2788.js.map",
     "453.0ccb7fb4.chunk.js.map": "/temalab2024/static/js/453.0ccb7fb4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9931b49.css",
-    "static/js/main.7bdd40cc.js"
+    "static/css/main.38d79667.css",
+    "static/js/main.16ab2788.js"
   ]
 }
