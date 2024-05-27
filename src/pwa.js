@@ -1,3 +1,5 @@
+const formattedDate = currentDate.toLocaleDateString();
+  const currentTime = currentDate.toLocaleTimeString();
 
 const CACHE_NAME = 'weather-app-cache-v1';
 const urlsToCache = [
@@ -5,6 +7,10 @@ const urlsToCache = [
   '/index.html',
  
 ];
+
+Notification.requestPermission(function(status) {
+  console.log('Notification permission status:', status);});
+
 
 this.addEventListener('install', (event) => {
   event.waitUntil(
